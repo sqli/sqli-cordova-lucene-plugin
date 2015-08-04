@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="phonegap-lucene-plugin"
+        version="1.0.0">
+    <name>LucenePlugin</name>
+    <description>Lucene Search</description>
+    <license>Apache 2.0</license>
+    <keywords>lucene</keywords>
+    <repo></repo>
+    <issue></issue>
+    <js-module src="lucene.js" name="LucenePlugin">
+        <clobbers target="LucenePlugin"/>
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="LucenePlugin">
+                <param name="android-package" value="com.sqli.phonegap.lucene.LucenePlugin"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/LucenePlugin.java" target-dir="src/com/sqli/phonegap/lucene/"/>
+        <source-file src="src/android/libs/lucene-core-2.9.4.jar" target-dir="libs" framework="true"/>
+        <source-file src="src/android/libs/lucene-queryparser-2.9.4.jar" target-dir="libs" framework="true"/>
+        <source-file src="src/android/libs/lucene-analyzers-2.9.4.jar" target-dir="libs" framework="true"/>
+    </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="LucenePlugin">
+                <param name="ios-package" value="LucenePlugin"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        <framework src="CoreLocation.framework"/>
+        <framework src="MediaPlayer.framework"/>
+        <framework src="MessageUI.framework"/>
+        <framework src="libxml2.dylib"/>
+        <framework src="libz.dylib"/>
+        <framework src="CFNetwork.framework"/>
+        <framework src="OpenGLES.framework"/>
+        <framework src="Security.framework"/>
+	<framework src="SystemConfiguration.framework"/>
+
+        <source-file src="src/ios/LucenePlugin.h"/>
+        <source-file src="src/ios/LucenePlugin.m"/>
+	<source-file src="src/ios/libs/S4iOSLib/libS4iOSLib.a" framework="true" target-dir="../../.."/>
+        <source-file src="src/ios/libs/S4LuceneLib/libS4LuceneLib.a" framework="true" target-dir="../../.."/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/Analysis.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/CodeHandler.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/CodeParser.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/Document.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/GNUstep.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/Index.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/Java.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCAnalyzer.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCBitVector.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCBooleanClause.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCBooleanQuery.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCBooleanScorer.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCCachingWrapperFilter.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCCharTokenizer.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCCompoundFileReader.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCCompoundFileWriter.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCConjunctionScorer.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCDateFilter.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCDateTools.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCDefaultSimilarity.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCDirectory.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCDisjunctionSumScorer.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCDocument.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCDocumentWriter.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCExactPhraseScorer.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCExplanation.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCFSDirectory.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCFSIndexInput.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCFSIndexOutput.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCField.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCFieldCache.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCFieldCacheImpl.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCFieldDoc.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCFieldDocSortedHitQueue.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCFieldInfo.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCFieldInfos.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCFieldSortedHitQueue.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCFieldsReader.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCFieldsWriter.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCFilter.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCFilterIndexReader.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCFilteredQuery.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCFilteredTermEnum.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCFuzzyQuery.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCFuzzyTermEnum.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCHit.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCHitCollector.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCHitIterator.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCHitQueue.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCHits.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCImporter.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCIndexInput.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCIndexManager.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCIndexModifier.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCIndexOutput.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCIndexReader.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCIndexSearcher.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCIndexWriter.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCLetterTokenizer.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCLowerCaseFilter.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCLowerCaseTokenizer.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCMMapDirectory.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCMetadataAttribute.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCMultiPhraseQuery.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCMultiReader.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCMultiSearcher.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCMultiTermQuery.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCMultipleTermPositions.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCNonMatchingScorer.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCNumberTools.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCPerFieldAnalyzerWrapper.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCPhrasePositions.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCPhrasePrefixQuery.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCPhraseQuery.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCPhraseQueue.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCPhraseScorer.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCPorterStemFilter.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCPrefixQuery.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCPriorityQueue.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCQuery.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCQueryFilter.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCQueryParser.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCQueryTermVector.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCRAMDirectory.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCRAMFile.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCRAMInputStream.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCRAMOutputStream.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCRangeFilter.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCRangeQuery.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCReader.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCReqExclScorer.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCReqOptSumScorer.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCScoreDoc.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCScoreDocComparator.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCScorer.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCSearchable.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCSearcher.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCSegmentInfo.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCSegmentInfos.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCSegmentMergeInfo.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCSegmentMergeQueue.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCSegmentMerger.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCSegmentReader.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCSegmentTermDocs.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCSegmentTermEnum.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCSegmentTermPositionVector.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCSegmentTermPositions.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCSegmentTermVector.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCSimilarity.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCSimilarityDelegator.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCSimpleAnalyzer.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCSmallFloat.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCSort.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCSortComparator.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCSortComparatorSource.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCSortField.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCStopAnalyzer.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCStopFilter.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCStringReader.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCTerm.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCTermBuffer.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCTermDocs.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCTermEnum.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCTermFreqVector.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCTermInfo.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCTermInfosReader.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCTermInfosWriter.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCTermPositionVector.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCTermPositions.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCTermQuery.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCTermScorer.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCTermVectorOffsetInfo.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCTermVectorsReader.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCTermVectorsWriter.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCTextImporter.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCToken.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCTokenFilter.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCTokenStream.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCTokenizer.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCTopDocCollector.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCTopDocs.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCTopFieldDocCollector.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCTopFieldDocs.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCWeight.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCWhitespaceAnalyzer.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCWhitespaceTokenizer.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCWildcardQuery.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCWildcardTermEnum.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LCWordlistLoader.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/LuceneKit.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/NSData+Additions.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/NSString+Additions.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/PorterStemmer.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/QueryHandler.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/QueryParser.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/Search.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/Store.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/TokenHandler.h"/>
+        <source-file src="src/ios/libs/S4LuceneLib/Headers/Util.h"/>
+
+
+    </platform>
+</plugin>
