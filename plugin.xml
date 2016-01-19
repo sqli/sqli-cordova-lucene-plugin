@@ -27,6 +27,13 @@
         <source-file src="src/android/libs/lucene-analyzers-2.9.4.jar" target-dir="libs" framework="true"/>
     </platform>
 
+	<!-- windows -->
+    <platform name="windows">
+        <js-module src="src/windows/LucenePluginProxy.js" name="LucenePluginProxy">
+            <merges target="" />
+        </js-module>
+    </platform>
+	
     <!-- ios -->
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
