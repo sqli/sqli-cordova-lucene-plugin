@@ -1,6 +1,3 @@
-cordova.define("sqli-cordova-lucene-plugin.LucenePluginProxy", function(require, exports, module) { var cordova = require('cordova'),
-    LucenePlugin= require('./LucenePlugin');
-
 var commandFile = 'command.lptf';
 var commandResult = 'command.out';
 
@@ -49,4 +46,3 @@ module.exports = {
 };
 
 require("cordova/exec/proxy").add("LucenePlugin", module.exports);
-});
