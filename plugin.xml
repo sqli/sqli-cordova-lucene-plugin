@@ -5,7 +5,7 @@
         version="1.0.0">
     <name>LucenePlugin</name>
     <description>Lucene Search</description>
-    <license>Apache 2.0</license>
+    <license>MIT</license>
     <keywords>lucene</keywords>
     <repo></repo>
     <issue></issue>
