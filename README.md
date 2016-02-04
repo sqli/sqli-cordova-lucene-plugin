@@ -4,12 +4,13 @@ This plugin allows to search on Lucene index in Android / iOS / Windows 10 platf
 ## Installation
 To use this plugin in a project, you have to do:
 
-	cordova plugin add git@gitlab-toulouse.sqli.com:ah-techpub/phonegap-lucene-plugin.git
+	cordova plugin add https://github.com/sqli/sqli-cordova-lucene-plugin.git
 
 Add your platforms targeted:
 
 	cordova platform add android
 	cordova platform add ios
+	cordova platform add windows
 
 ## Usage
 
@@ -59,4 +60,4 @@ Example:
 	}
 
 ## Limitations
-Under Windows 10 platform, there is no way to execute Lucene search. Indeed, all libraries that allow it are compiled for desktop platform, not for mobile platform (Windows Universal App). To do that, a specific tool has to be installed on Windows device. This tool is "[http://gitlab-toulouse.sqli.com/ah-techpub/lucene-proxy-tool](http://gitlab-toulouse.sqli.com/ah-techpub/lucene-proxy-tool "Lucene Proxy Tool") " developped by SQLI. This tool allows to communicate the mobile environment with desktop environment.
+Under Windows 10 platform, there is no way to execute Lucene search. Indeed, all libraries that allow it are compiled for desktop platform, not for mobile platform (Windows Universal App). To do that, a specific tool has to be installed on Windows device. This tool is "[https://github.com/sqli/lucene-proxy-tool.git](https://github.com/sqli/lucene-proxy-tool.git "Lucene Proxy Tool") " developped by SQLI. This tool allows to communicate the mobile environment with desktop environment.
